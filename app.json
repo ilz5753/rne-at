@@ -1,19 +1,12 @@
 {
   "expo": {
-    "name": "awcFe",
-    "slug": "awcFe",
+    "name": "rne-at",
+    "slug": "rne-at",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "userInterfaceStyle": "automatic",
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
