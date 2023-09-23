@@ -38,7 +38,7 @@ This will start the Expo development server, and you can run your app on your de
 ## Using Template
 To use the template, run the following command:
 ```sh
-expo init my-app --template rne-at
+npx create-expo-app --template rne-at@latest
 ```
 This command will initialize a new Expo project named "my-app" using the template from the GitHub repository at `rne-at`.
 ## Contributing
