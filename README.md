@@ -57,4 +57,4 @@ We welcome contributions to improve RNE-AT. If you would like to contribute:
 
 ## License
 
-This project is open-source and available under the MIT [License](/license).
+This project is open-source and available under the MIT [License](./license).

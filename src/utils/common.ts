@@ -14,3 +14,5 @@ export const IdGen = () => {
   };
 };
 export const idn = Object.freeze(IdGen());
+export const startAndEndCharRegex = (start: string, end: string) =>
+  new RegExp(`^${start}.*${end}$`);

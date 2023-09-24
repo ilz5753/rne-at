@@ -2,19 +2,42 @@ import { useFonts } from "expo-font";
 import { FadeIn, FadeOut } from "react-native-reanimated";
 import NativeStack from "../navigation/native-stack";
 import {
+  aic,
   backgroundColor,
+  borderRadius,
   center,
+  color,
   f1,
+  fdr,
   fontFamily,
+  margin,
   overlay,
+  padding,
 } from "../styles/normal";
 import { ReActivityIndicator, ReText, ReView } from "../utils/reanimated";
-function Test() {
+function Welcome() {
   return (
     <ReView style={[f1, center]}>
       <ReText style={[fontFamily("GothicA1-Light")]}>
-        Hello Welcome to App!
+        Hello, Welcome to App!
       </ReText>
+      <ReView style={[fdr, aic, margin("t", 15)]}>
+        <ReText style={[fontFamily("GothicA1-SemiBold")]}>
+          For start, edit
+        </ReText>
+        <ReView style={[margin("l", 7.5)]} />
+        <ReView
+          style={[
+            backgroundColor("#8D8D9C"),
+            padding("", 10),
+            borderRadius("", 10),
+          ]}
+        >
+          <ReText style={[color("white"), fontFamily("GothicA1-ExtraBold")]}>
+            src/screens/index.tsx
+          </ReText>
+        </ReView>
+      </ReView>
     </ReView>
   );
 }
@@ -37,18 +60,18 @@ export default function MainIndex() {
           screens: [
             {
               id: "0",
-              name: "Test",
-              component: Test,
+              name: "Welcome",
+              component: Welcome,
             },
           ],
           headerShown: true,
-          initialIndex: 10,
+          initialIndex: 1,
         }}
       />
     );
   return (
     <ReView
-      style={[f1, center, backgroundColor("white"), overlay]}
+      style={[f1, center, backgroundColor("white")]}
       entering={FadeIn}
       exiting={FadeOut}
     >

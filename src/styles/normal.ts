@@ -1,23 +1,93 @@
+import { capitalize } from "lodash";
 import { ColorValue, DimensionValue, Platform } from "react-native";
 import { OUs } from "../types/common";
-const BR = "border",
-  T = "Top",
-  B = "Bottom",
-  L = "Left",
-  R = "Right",
-  S = "Start",
-  E = "End",
-  H = "Horizontal",
-  V = "Vertical";
-
-let border = (bt: string = "", type: string = "", value: any) => {
-  let _ = (p = "") => `${BR}${p}${bt}`;
-  let t = _(T),
-    b = _(B),
-    l = _(L),
-    r = _(R),
-    s = _(S),
-    e = _(E);
+import { TBS, TBorderRadius } from "../types/styles/normal";
+const _0 = (a: string[], j = "-") => a.join(j),
+  _1 = "visible",
+  _2 = "hidden",
+  _3 = "solid",
+  _4 = "dotted",
+  _5 = "dashed",
+  _6 = "auto",
+  _7 = "none",
+  _8 = "nums",
+  _9 = "",
+  _10 = "normal",
+  _11 = "italic",
+  _12 = "bold",
+  _13 = "small-caps",
+  _14 = _0([_9, _8]),
+  _15 = `oldstyle${_14}`,
+  _16 = `linig${_14}`,
+  _17 = `tabular${_14}`,
+  _18 = `proportional${_14}`,
+  _19 = "left",
+  _20 = "right",
+  _21 = "justify",
+  _22 = "center",
+  _23 = "top",
+  _24 = "bottom",
+  _25 = "under",
+  _26 = "line",
+  _27 = "through",
+  _28 = `${_25}${_26}`,
+  _29 = _0([_26, _27]),
+  _30 = _0([_28, _29], " "),
+  _31 = "double",
+  _32 = "case",
+  _33 = `upper${_32}`,
+  _34 = `lower${_32}`,
+  _35 = "capitalize",
+  _36 = "middle",
+  _37 = "ltr",
+  _38 = "rtl",
+  _39 = "box-",
+  _40 = "only",
+  _41 = `${_39}${_7}`,
+  _42 = `${_39}${_40}`,
+  _43 = "flex",
+  _44 = "start",
+  _45 = "end",
+  _46 = _0([_43, _44]),
+  _47 = _0([_43, _45]),
+  _48 = "stretch",
+  _49 = "space",
+  _50 = "between",
+  _51 = "around",
+  _52 = _0([_49, _50]),
+  _53 = _0([_49, _51]),
+  _54 = "base",
+  _55 = _0([_54, _26], ""),
+  _57 = "inherit",
+  _58 = "reverse",
+  _59 = "row",
+  _60 = "column",
+  _61 = _0([_59, _58]),
+  _62 = _0([_60, _58]),
+  _64 = "evenly",
+  _65 = _0([_49, _64]),
+  _66 = "scroll",
+  _67 = "absolute",
+  _68 = "relative",
+  _69 = "cover",
+  _70 = "contain",
+  _71 = "repeat",
+  _72 = "fill",
+  _73 = "scale",
+  _74 = "down",
+  _75 = _0([_73, _74]),
+  _76 = "horizontal",
+  _77 = "vertical",
+  _78 = "border",
+  _79 = "radius";
+let border = (bt: string = "", type: TBS = "", value: any) => {
+  let _ = (p = "") => `${_78}${capitalize(p)}${bt}`;
+  let t = _(_23),
+    b = _(_24),
+    l = _(_19),
+    r = _(_20),
+    s = _(_44),
+    e = _(_45);
   let o = {};
   switch (type) {
     case "t":
@@ -111,16 +181,16 @@ let border = (bt: string = "", type: string = "", value: any) => {
   }
   return o;
 };
-let spacing = (st: string = "", type: string = "", value: any) => {
-  let _ = (p = "") => `${st}${p}`;
-  let t = _(T),
-    b = _(B),
-    l = _(L),
-    r = _(R),
-    s = _(S),
-    e = _(E),
-    h = _(H),
-    v = _(V);
+let spacing = (st: string = "", type: TBS = "", value: any) => {
+  let _ = (p = "") => `${st}${capitalize(p)}`;
+  let t = _(_23),
+    b = _(_24),
+    l = _(_19),
+    r = _(_20),
+    s = _(_44),
+    e = _(_45),
+    h = _(_76),
+    v = _(_77);
   let o = {};
   switch (type) {
     case "t":
@@ -211,7 +281,7 @@ export const backgroundColor = (backgroundColor?: ColorValue) => ({
   backgroundColor,
 });
 export const color = (color?: ColorValue) => ({ color });
-export const borderColor = (type: string = "", value?: ColorValue) =>
+export const borderColor = (type: TBS = "", value?: ColorValue) =>
   border("Color", type, value);
 export const shadowColor = (shadowColor?: ColorValue) => ({ shadowColor });
 export const tintColor = (tintColor?: ColorValue) => ({ tintColor });
@@ -224,16 +294,17 @@ export const textShadowColor = (textShadowColor?: ColorValue) => ({
 export const overlayColor = (overlayColor?: ColorValue) => ({ overlayColor });
 
 export const flex = (flex?: number) => ({ flex });
-export const borderRadius = (type: string = "", value?: number) => {
-  let _ = (_0 = "", _1 = "") => `${BR}${_0}${_1}Radius`;
-  let tl = _(T, L),
-    tr = _(T, R),
-    bl = _(B, L),
-    br = _(B, R),
-    ts = _(T, S),
-    te = _(T, E),
-    bs = _(B, S),
-    be = _(B, E);
+export const borderRadius = (type: TBorderRadius = "", value?: number) => {
+  let _ = (_0 = "", _1 = "") =>
+    `${_78}${capitalize(_0)}${capitalize(_1)}${capitalize(_79)}`;
+  let tl = _(_23, _24),
+    tr = _(_23, _20),
+    bl = _(_24, _24),
+    br = _(_24, _20),
+    ts = _(_23, _44),
+    te = _(_23, _45),
+    bs = _(_24, _44),
+    be = _(_24, _45);
   let o = {};
   switch (type) {
     case "lt":
@@ -380,7 +451,7 @@ export const borderRadius = (type: string = "", value?: number) => {
   }
   return o;
 };
-export const borderWidth = (type: string = "", value?: number) =>
+export const borderWidth = (type: TBS = "", value?: number) =>
   border("Width", type, value);
 export const opacity = (opacity?: number) => ({ opacity });
 export const rowGap = (rowGap?: number) => ({ rowGap });
@@ -412,85 +483,10 @@ export const maxHeight = (maxHeight?: DimensionValue) => ({ maxHeight });
 export const width = (width?: DimensionValue) => ({ width });
 export const minWidth = (minWidth?: DimensionValue) => ({ minWidth });
 export const maxWidth = (maxWidth?: DimensionValue) => ({ maxWidth });
-export const margin = (type: string = "", value?: DimensionValue) =>
+export const margin = (type: TBS = "", value?: DimensionValue) =>
   spacing("margin", type, value);
-export const padding = (type: string = "", value?: DimensionValue) =>
+export const padding = (type: TBS = "", value?: DimensionValue) =>
   spacing("padding", type, value);
-
-const _0 = (a: string[], j = "-") => a.join(j),
-  _1 = "visible",
-  _2 = "hidden",
-  _3 = "solid",
-  _4 = "dotted",
-  _5 = "dashed",
-  _6 = "auto",
-  _7 = "none",
-  _8 = "nums",
-  _9 = "",
-  _10 = "normal",
-  _11 = "italic",
-  _12 = "bold",
-  _13 = "small-caps",
-  _14 = _0([_9, _8]),
-  _15 = `oldstyle${_14}`,
-  _16 = `linig${_14}`,
-  _17 = `tabular${_14}`,
-  _18 = `proportional${_14}`,
-  _19 = "left",
-  _20 = "right",
-  _21 = "justify",
-  _22 = "center",
-  _23 = "top",
-  _24 = "bottom",
-  _25 = "under",
-  _26 = "line",
-  _27 = "through",
-  _28 = `${_25}${_26}`,
-  _29 = _0([_26, _27]),
-  _30 = _0([_28, _29], " "),
-  _31 = "double",
-  _32 = "case",
-  _33 = `upper${_32}`,
-  _34 = `lower${_32}`,
-  _35 = "capitalize",
-  _36 = "middle",
-  _37 = "ltr",
-  _38 = "rtl",
-  _39 = "box-",
-  _40 = "only",
-  _41 = `${_39}${_7}`,
-  _42 = `${_39}${_40}`,
-  _43 = "flex",
-  _44 = "start",
-  _45 = "end",
-  _46 = _0([_43, _44]),
-  _47 = _0([_43, _45]),
-  _48 = "stretch",
-  _49 = "space",
-  _50 = "between",
-  _51 = "around",
-  _52 = _0([_49, _50]),
-  _53 = _0([_49, _51]),
-  _54 = "base",
-  _55 = _0([_54, _26], ""),
-  _57 = "inherit",
-  _58 = "reverse",
-  _59 = "row",
-  _60 = "column",
-  _61 = _0([_59, _58]),
-  _62 = _0([_60, _58]),
-  _64 = "evenly",
-  _65 = _0([_49, _64]),
-  _66 = "scroll",
-  _67 = "absolute",
-  _68 = "relative",
-  _69 = "cover",
-  _70 = "contain",
-  _71 = "repeat",
-  _72 = "fill",
-  _73 = "scale",
-  _74 = "down",
-  _75 = _0([_73, _74]);
 
 export const backfaceVisibility = (type?: "h" | "v") => {
   let $: OUs;
@@ -1074,3 +1070,12 @@ export const ofs = overflow("s") as any;
 export const pa = position("a") as any;
 export const center = [aic, jcc] as any;
 export const overlay = [zIndex(1), pa] as any;
+export const fw = width("100%");
+export const fh = height("100%");
+export const full = [fw, fh];
+export const bw1 = borderWidth("", 1);
+export const layout = (w?: DimensionValue, h?: DimensionValue) => [
+  width(w),
+  height(h),
+];
+export const squareLayout = (size?: DimensionValue) => layout(size, size);

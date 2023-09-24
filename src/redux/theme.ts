@@ -26,16 +26,16 @@ export const useThemeSelect = () => useSelector(ThemeSelect);
 export const useTheme = () => {
   let { data, current } = useThemeSelect();
   let { mode, colors } = current;
-  let cs = useColorScheme();
-  let m = useMemo<TScheme>(
-    () => (mode === "system" ? cs ?? "light" : mode),
-    [mode, cs]
+  let colorScheme = useColorScheme();
+  let scheme = useMemo<TScheme>(
+    () => (mode === "system" ? colorScheme ?? "light" : mode),
+    [mode, colorScheme]
   );
   return {
     themes: data,
     theme: current,
-    colors: colors[m],
-    scheme: m,
+    colors: colors[scheme],
+    scheme,
   };
 };
 export default Theme.reducer;

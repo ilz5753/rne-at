@@ -9,6 +9,8 @@ import {
   Text,
   TextInput,
   View,
+  TouchableOpacity,
+  TouchableHighlight,
 } from "react-native";
 
 const $ = Animated.createAnimatedComponent;
@@ -21,3 +23,5 @@ export const ReSectionList = $(SectionList);
 export const ReActivityIndicator = $(ActivityIndicator);
 export const ReImage = $(Image);
 export const ReImageBackground = $(ImageBackground);
+export const ReTouchableOpacity = $(TouchableOpacity);
+export const ReTouchableHighlight = $(TouchableHighlight);

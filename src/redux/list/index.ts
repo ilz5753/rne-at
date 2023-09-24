@@ -13,11 +13,11 @@ export default function newList<T, N extends string, K extends keyof Draft<T>>({
     name,
     reducers: {
       add(state, { payload }: IPayload<DT>) {
-        let keys = map(state.data, (i) => i[key]);
+        let keys = map(state.data, (item) => item[key]);
         if (!includes(keys, payload[key])) state.data.push(payload);
       },
       updateViaCurrent(state) {
-        let keys = map(state.data, (i) => i[key]);
+        let keys = map(state.data, (item) => item[key]);
         let index = indexOf(keys, state.current[key]);
         state.data[index] = state.current;
       },
@@ -25,7 +25,7 @@ export default function newList<T, N extends string, K extends keyof Draft<T>>({
         state.current = { ...state.current, ...payload };
       },
       updateCurrentViaKey(state, { payload }: IPayload<DT[K]>) {
-        let keys = map(state.data, (i) => i[key]);
+        let keys = map(state.data, (item) => item[key]);
         if (includes(keys, payload)) {
           let index = indexOf(keys, payload);
           state.current = state.data[index];
