@@ -24,8 +24,8 @@ jobs:
           git config --global user.email "mehdi.abdollahi3578@gmail.com"
           git config --global user.name "ilz5753"
 
-      - name: Install dependencies
-        run: npm install
+      # - name: Install dependencies
+      #   run: npm install
 
       - name: Bump version and create a release
         run: npm version patch -m "Bump version to %s"
