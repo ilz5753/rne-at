@@ -7,6 +7,14 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+      # Setup .npmrc file to publish to GitHub Packages
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "14.x"
+          registry-url: "https://npm.pkg.github.com"
+          # Defaults to the user or organization that owns the workflow file
+          scope: "@ilz5753"
       - name: Set Git User Identity
         run: |
           git config --global user.email "mehdi.abdollahi3578@gmail.com"
