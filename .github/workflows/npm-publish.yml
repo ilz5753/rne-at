@@ -20,8 +20,8 @@ jobs:
 
       - name: Set Git User Identity
         run: |
-          git config user.email "mehdi.abdollahi3578@gmail.com"
-          git config user.name "ilz5753"
+          git config --global user.email "mehdi.abdollahi3578@gmail.com"
+          git config --global user.name "ilz5753"
 
       - name: Install dependencies
         run: npm install
