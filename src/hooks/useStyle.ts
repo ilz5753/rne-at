@@ -9,17 +9,15 @@ import {
   useNumberSizes,
 } from "../styles/reanimated";
 import { TDimensionValue } from "../types/common";
-import { With500mTime, numberPercentRegex } from "../utils/common";
-import useCacheShareValue from "./useCacheShareValue";
+import { IUseCacheShareValue } from "../types/hooks/useCacheSharedValue";
+import { numberPercentRegex } from "../utils/common";
 
-export function useColorStyle(
-  value: string,
-  progressUpdaterWorklet = With500mTime
-) {
-  let { previous, current, inputRange, progress } = useCacheShareValue(
-    value,
-    progressUpdaterWorklet
-  );
+export function useColorStyle({
+  previous,
+  progress,
+  inputRange,
+  current,
+}: IUseCacheShareValue<string>) {
   let color = useDerivedValue(
     () =>
       interpolateColor(progress.value, inputRange, [
@@ -30,14 +28,12 @@ export function useColorStyle(
   );
   return useColors(color);
 }
-export function useNumberSizesStyle(
-  value: number,
-  progressUpdaterWorklet = With500mTime
-) {
-  let { previous, current, inputRange, progress } = useCacheShareValue(
-    value,
-    progressUpdaterWorklet
-  );
+export function useNumberSizesStyle({
+  previous,
+  progress,
+  inputRange,
+  current,
+}: IUseCacheShareValue<number>) {
   let size = useDerivedValue(
     () =>
       interpolate(progress.value, inputRange, [previous.value, current.value]),
@@ -45,14 +41,12 @@ export function useNumberSizesStyle(
   );
   return useNumberSizes(size);
 }
-export function useDimensionSizesStyle(
-  value: TDimensionValue,
-  progressUpdaterWorklet = With500mTime
-) {
-  let { previous, current, inputRange, progress } = useCacheShareValue(
-    value,
-    progressUpdaterWorklet
-  );
+export function useDimensionSizesStyle({
+  previous,
+  progress,
+  inputRange,
+  current,
+}: IUseCacheShareValue<TDimensionValue>) {
   let size = useDerivedValue(() => {
     let sp = `${previous.value}`;
     let sc = `${current.value}`;

@@ -2,12 +2,13 @@ import { isEqual } from "lodash";
 import { useEffect } from "react";
 import { useSharedValue } from "react-native-reanimated";
 import { TWorkletFn } from "../types/common";
+import { IUseCacheShareValue } from "../types/hooks/useCacheSharedValue";
 export default function useCacheShareValue<T>(
   value: T,
   progressUpdaterWorklet?: TWorkletFn<number>,
   min = 0,
   max = 1
-) {
+): IUseCacheShareValue<T> {
   let previous = useSharedValue(value);
   let current = useSharedValue(value);
   let progress = useSharedValue(min);

@@ -1,6 +1,5 @@
 import { capitalize } from "lodash";
 import { ColorValue, DimensionValue, Platform } from "react-native";
-import { OUs } from "../types/common";
 import { TBS, TBorderRadius } from "../types/styles/normal";
 const _0 = (a: string[], j = "-") => a.join(j),
   _1 = "visible",
@@ -489,7 +488,7 @@ export const padding = (type: TBS = "", value?: DimensionValue) =>
   spacing("padding", type, value);
 
 export const backfaceVisibility = (type?: "h" | "v") => {
-  let $: OUs;
+  let $: any;
   switch (type) {
     case "v":
       $ = _1;
@@ -506,7 +505,7 @@ export const backfaceVisibility = (type?: "h" | "v") => {
   };
 };
 export const borderStyle = (type?: "." | "-" | "s") => {
-  let $: OUs;
+  let $: any;
   switch (type) {
     case "s":
       $ = _3;
@@ -526,7 +525,7 @@ export const borderStyle = (type?: "." | "-" | "s") => {
   };
 };
 export const pointerEvents = (type?: "a" | "n" | "bn" | "bo") => {
-  let $: OUs;
+  let $: any;
   switch (type) {
     case "a":
       $ = _6;
@@ -549,7 +548,7 @@ export const pointerEvents = (type?: "a" | "n" | "bn" | "bo") => {
   };
 };
 export const fontStyle = (type?: "i" | "n") => {
-  let $: OUs;
+  let $: any;
   switch (type) {
     case "i":
       $ = _11;
@@ -565,7 +564,7 @@ export const fontStyle = (type?: "i" | "n") => {
 export const fontWeight = (
   type?: "b" | "n" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
 ) => {
-  let $: OUs;
+  let $: any;
   switch (type) {
     case "b":
       $ = _12;
@@ -592,7 +591,7 @@ export const fontWeight = (
 export const fontVariant = (
   type: ("sc" | "on" | "ln" | "tn" | "pn")[] = []
 ) => {
-  let $: OUs[] = [];
+  let $: any[] = [];
   for (let t of type)
     switch (t) {
       case "sc":
@@ -618,7 +617,7 @@ export const fontVariant = (
   };
 };
 export const textAlign = (type?: "a" | "l" | "r" | "j" | "c") => {
-  let $: OUs;
+  let $: any;
   switch (type) {
     case "l":
       $ = _19;
@@ -641,7 +640,7 @@ export const textAlign = (type?: "a" | "l" | "r" | "j" | "c") => {
   };
 };
 export const textAlignVertical = (type?: "a" | "c" | "t" | "b") => {
-  let $: OUs;
+  let $: any;
   switch (type) {
     case "c":
       $ = _22;
@@ -661,7 +660,7 @@ export const textAlignVertical = (type?: "a" | "c" | "t" | "b") => {
   };
 };
 export const textDecorationLine = (type?: "n" | "u" | "lt" | "ult") => {
-  let $: OUs;
+  let $: any;
   switch (type) {
     case "u":
       $ = _28;
@@ -681,7 +680,7 @@ export const textDecorationLine = (type?: "n" | "u" | "lt" | "ult") => {
   };
 };
 export const textDecorationStyle = (type?: "s" | "." | "-" | "d") => {
-  let $: OUs;
+  let $: any;
   switch (type) {
     case ".":
       $ = _4;
@@ -701,7 +700,7 @@ export const textDecorationStyle = (type?: "s" | "." | "-" | "d") => {
   };
 };
 export const textTransform = (type?: "u" | "n" | "l" | "c") => {
-  let $: OUs;
+  let $: any;
   switch (type) {
     case "u":
       $ = _33;
@@ -721,7 +720,7 @@ export const textTransform = (type?: "u" | "n" | "l" | "c") => {
   };
 };
 export const verticalAlign = (type?: "a" | "t" | "b" | "m") => {
-  let $: OUs;
+  let $: any;
   switch (type) {
     case "t":
       $ = _23;
@@ -741,7 +740,7 @@ export const verticalAlign = (type?: "a" | "t" | "b" | "m") => {
   };
 };
 export const writingDirection = (type?: "a" | "l" | "r") => {
-  let $: OUs;
+  let $: any;
   switch (type) {
     case "l":
       $ = _37;
@@ -758,7 +757,7 @@ export const writingDirection = (type?: "a" | "l" | "r") => {
   };
 };
 export const alignContent = (type?: "fs" | "fe" | "c" | "s" | "sb" | "sa") => {
-  let $: OUs;
+  let $: any;
   switch (type) {
     case "fs":
       $ = _46;
@@ -787,7 +786,7 @@ export const alignContent = (type?: "fs" | "fe" | "c" | "s" | "sb" | "sa") => {
   };
 };
 export const alignItems = (type?: "fs" | "fe" | "c" | "s" | "b") => {
-  let $: OUs;
+  let $: any;
   switch (type) {
     case "fs":
       $ = _46;
@@ -813,7 +812,7 @@ export const alignItems = (type?: "fs" | "fe" | "c" | "s" | "b") => {
   };
 };
 export const alignSelf = (type?: "a" | "fs" | "fe" | "c" | "s" | "b") => {
-  let $: OUs;
+  let $: any;
   switch (type) {
     case "a":
       $ = _6;
@@ -842,7 +841,7 @@ export const alignSelf = (type?: "a" | "fs" | "fe" | "c" | "s" | "b") => {
   };
 };
 export const direction = (type?: "i" | "l" | "r") => {
-  let $: OUs;
+  let $: any;
   switch (type) {
     case "l":
       $ = _37;
@@ -862,7 +861,7 @@ export const direction = (type?: "i" | "l" | "r") => {
   };
 };
 export const display = (type?: "f" | "n") => {
-  let $: OUs;
+  let $: any;
   switch (type) {
     case "n":
       $ = _7;
@@ -876,7 +875,7 @@ export const display = (type?: "f" | "n") => {
   };
 };
 export const flexDirection = (type?: "r" | "rr" | "c" | "cr") => {
-  let $: OUs;
+  let $: any;
   switch (type) {
     case "r":
       $ = _59;
@@ -901,7 +900,7 @@ export const flexDirection = (type?: "r" | "rr" | "c" | "cr") => {
 export const justifyContent = (
   type?: "fs" | "fe" | "c" | "sb" | "sa" | "se"
 ) => {
-  let $: OUs;
+  let $: any;
   switch (type) {
     case "fs":
       $ = _46;
@@ -930,7 +929,7 @@ export const justifyContent = (
   };
 };
 export const overflow = (type?: "v" | "h" | "s") => {
-  let $: OUs;
+  let $: any;
   switch (type) {
     case "v":
       $ = _1;
@@ -950,7 +949,7 @@ export const overflow = (type?: "v" | "h" | "s") => {
   };
 };
 export const position = (type?: "a" | "r") => {
-  let $: OUs;
+  let $: any;
   switch (type) {
     case "r":
       $ = _67;
@@ -967,7 +966,7 @@ export const position = (type?: "a" | "r") => {
   };
 };
 export const resizeMode = (type?: "cov" | "con" | "s" | "r" | "c") => {
-  let $: OUs;
+  let $: any;
   switch (type) {
     case "con":
       $ = _70;
@@ -990,7 +989,7 @@ export const resizeMode = (type?: "cov" | "con" | "s" | "r" | "c") => {
   };
 };
 export const objectFit = (type?: "cov" | "con" | "f" | "sd") => {
-  let $: OUs;
+  let $: any;
   switch (type) {
     case "con":
       $ = _70;
@@ -1079,3 +1078,16 @@ export const layout = (w?: DimensionValue, h?: DimensionValue) => [
   height(h),
 ];
 export const squareLayout = (size?: DimensionValue) => layout(size, size);
+export const solidShadow = (color: string, width = 0, height = 0) => {
+  let s = height + width;
+  return {
+    shadowColor: color,
+    shadowOpacity: s * 0.03,
+    shadowOffset: {
+      width,
+      height,
+    },
+    shadowRadius: s * 2,
+    elevation: s,
+  };
+};

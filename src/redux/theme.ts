@@ -8,8 +8,18 @@ export const AutoTheme: ITheme = {
   name: "Auto",
   mode: "system",
   colors: {
-    dark: {},
-    light: {},
+    dark: {
+      bg: "#000000",
+      text: "#ffffff",
+      primary: "#ff8500",
+      gray: "#666666",
+    },
+    light: {
+      bg: "#ffffff",
+      text: "#000000",
+      primary: "#007aff",
+      gray: "#999999",
+    },
   },
 };
 const Theme = newList({
