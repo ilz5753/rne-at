@@ -51,7 +51,7 @@ npx create-expo-app --template rne-at@latest
 
 We welcome contributions to improve RNE-AT. If you would like to contribute:
 
-1. Fork the repository on GitHub.
+1. Fork the repository on [GitHub](/).
 2. Make your changes and commit them.
 3. Submit a pull request with a clear description of your changes.
 
